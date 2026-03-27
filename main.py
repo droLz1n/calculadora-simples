@@ -1,17 +1,30 @@
 # Calculadora no terminal
 from rich import print
-#from rich.panel import Panel
-#from rich.align import Align
+from rich.panel import Panel
+from rich.align import Align
 from rich.traceback import install
 install()
 
 
-print(
-    f"Está é uma [bold green]CALCULADORA SIMPLES[/] utilize apenas números [bold yellow]INTEIROS[/].")
+print(Panel.fit(
+    f"Está é uma [bold green]CALCULADORA SIMPLES[/] utilize apenas números [bold yellow]INTEIROS[/].",
+    title="Calculadora Simples",
+    border_style="yellow",
+    ))
 
 while True:
-    print(
-        f"Digite a operação que deseja realizar, usando os símbolos: [bold cyan]+[/], [bold cyan]-[/], [bold cyan]*[/], [bold cyan]/[/], [bold cyan]%[/].\nCaso deseje encerrar a calculadora digite [bold red]999[/].\n")
+
+    print(Panel.fit(
+        "\n"
+        "[bold cyan] + [/] Soma;\n"
+        "[bold cyan] - [/] Subtração;\n"
+        "[bold cyan] * [/] Multiplicação;\n"
+        "[bold cyan] / [/] Divisão;\n" 
+        "[bold cyan] % [/] Porcentagem;\n\n"
+        "Caso deseje encerrar a calculadora digite [bold red]999[/].\n " ,
+        title="Escolha a operação",
+        border_style="yellow"
+        ))
 
     operacao = input("Selecione a operação: ")
 
